@@ -2,5 +2,7 @@
 DeepWeb 실습 자료
 
 ## HTML
- - [List 태그 가로 예제](https://github.com/firstcoding-kr/deep-web/blob/master/list/list_%EA%B0%80%EB%A1%9C%EB%A9%94%EB%89%B4.html)
- - Table태그 예제 (작성중)
+ - [기본예제](https://firstcoding-kr.github.io/deep-web/html/html-basic.html)
+ - [List 메뉴](https://firstcoding-kr.github.io/deep-web/html/list_menu.html)
+ - [Table](https://firstcoding-kr.github.io/deep-web/html/table.html)
+ - [Form](https://firstcoding-kr.github.io/deep-web/html/form.html)
