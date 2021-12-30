@@ -1,0 +1,104 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+ 
+header{
+    width: 100%;
+    background-color: #2d3a4b;
+    position: relative;
+}
+ 
+#logo{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+ 
+#topMenu{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: white;
+}
+#topMenu a{color: white;font-size: 14px;}
+ 
+nav{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+}
+ 
+nav li{
+    line-height: 3em;
+    border-bottom: 1px solid #223344;
+}
+ 
+nav li a{
+    color: white;
+    display: block;
+    text-align: center;
+}
+ 
+nav li a:hover{
+    background-color: white;
+    color: black;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+#mainImg {
+    position: relative;
+}
+
+#mainText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: whitesmoke;
+    font-size: 30pt;
+    font-weight: bold;
+    transform: translate( -50%, -50% );
+    text-shadow: 1px 1px 10px black;
+    word-break: keep-all;
+}
+
+#content #banner li{
+    border-bottom: 1px solid gray;
+}
+#content #banner li a{
+    display: block;
+    text-align: center;
+}
+
+#banner img {
+    width: 70%;
+}
+
+/* footer 영역 */
+footer{
+    padding: 50px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 40px;
+}
+
+#footerAddress {
+    text-align: left;
+    color: rgb(48, 48, 48);
+}
+#footerAddress h1 {
+    font-size: 24px;
+}
+

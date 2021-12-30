@@ -8,3 +8,4 @@ DeepWeb 실습 자료
  - [Form](https://firstcoding-kr.github.io/deep-web/html/form.html)
  - [Form Join](https://firstcoding-kr.github.io/deep-web/html/form-join.html)
  - [Video](https://firstcoding-kr.github.io/deep-web/html/video-christmas/christmas.html)
+ - [간단 웹사이트 예제](https://firstcoding-kr.github.io/deep-web/html/website/index.html)
