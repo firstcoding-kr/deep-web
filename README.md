@@ -10,4 +10,5 @@ DeepWeb 실습 자료
  - [Form Join](https://firstcoding-kr.github.io/deep-web/html/form-join.html)
  - [Video](https://firstcoding-kr.github.io/deep-web/html/video-christmas/christmas.html)
  - [동영상 배경](https://firstcoding-kr.github.io/deep-web/html/video-background/video_background.html)
+ - [포스터](https://firstcoding-kr.github.io/deep-web/html/poster_example/poster_result.html)
  - [간단 웹사이트 예제](https://firstcoding-kr.github.io/deep-web/html/website/index.html)
