@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        body>div {
+            width: 100%;
+        }
+        #back>video {
+            width: 100%;
+            object-fit: cover;
+        }
+        #content {
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            color: white;
+            text-align: center;
+            font-size: 26pt;
+            text-shadow: 1px 1px 5px #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="back">
+        <video src="road.mp4" autoplay muted loop></video>
+    </div>
+    <div id="content">
+        <h1>Hello, World!</h1>
+    </div>
+</body>
+</html>
