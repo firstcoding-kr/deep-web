@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+    <style>
+        ul { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0;
+            background-color: #FFDAB9;
+        }
+        li {
+            display: inline-block; /* 리스트를 수평으로 */
+        }
+        li a { 
+            display: block;
+            color: #000000; 
+            padding: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        li a:hover { 
+            background-color: #CD853F; 
+            color: white; 
+        }
+        /* current 클래스가 있는 것은 현재 선택된 메뉴 */
+        li a.current { 
+            background-color: #FF6347; 
+            color: white; 
+        }
+        li a:hover:not(.current) { 
+            background-color: #CD853F; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#" class="current">CSS</a></li>
+        <li><a href="#">자바스크립트</a></li>
+    </ul>
+</body>
+</html>

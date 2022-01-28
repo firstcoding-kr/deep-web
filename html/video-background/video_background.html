@@ -8,6 +8,8 @@
             margin: 0;
             padding: 0;
             background-color: black;
+            color: white;
+            text-shadow: 1px 1px 5px #000;
         }
         body>div {
             width: 100%;
@@ -20,16 +22,49 @@
             position: absolute;
             top: 45%;
             width: 100%;
-            color: white;
             text-align: center;
             font-size: 26pt;
-            text-shadow: 1px 1px 5px #000;
+        }
+        #nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #nav ul {
+            list-style-type: none;
+            color: white;
+            font-size: 20pt;
+            margin-left: auto;
+            margin-right: auto;
+            width: 750px;
+        }
+        #nav li {
+            display: inline-block;
+            padding: 10px;
+            border-bottom: 2px solid white;
+            width: 200px;
+            text-align: center;
+        }
+        #nav li a {
+            text-decoration: none;
+            color: white;
+        }
+        #nav li a:hover {
+            color: chocolate;
+            text-shadow: 1px 1px 5px;
         }
     </style>
 </head>
 <body>
     <div id="back">
         <video src="road.mp4" autoplay muted loop></video>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">프로필</a></li>
+            <li><a href="#">프트폴리오</a></li>
+        </ul>
     </div>
     <div id="content">
         <h1>Hello, World!</h1>
