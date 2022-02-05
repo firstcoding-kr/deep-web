@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>media query</title>
+    <style>
+        @media screen {
+            body { 
+                background-color: black; color: white; 
+            }
+        }
+    
+        @media print {
+            body { 
+                background-color: white; color: black; 
+            }
+        }
+    </style>    
+</head>
+<body>
+    인쇄 시 배경색, 글자색이 바뀝니다.
+    <button type="button" onclick="javascript:window.print();">인쇄하기 버튼</button>
+</body>
+</html>
