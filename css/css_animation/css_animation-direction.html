@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css animation</title>
+    <style>
+        div {
+            position: absolute;
+            left: 100px;
+            width: 100px;
+            height: 50px;
+            background: #000;
+            color: #fff;
+            animation-name: direction;
+            animation-timing-function: linear;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+        }
+
+        .normal {
+            top: 20;
+            animation-direction: normal;
+        }
+
+        .alternate {
+            top: 80px;
+            animation-direction: alternate;
+        }
+
+        .reverse {
+            top: 140px;
+            animation-direction: reverse;
+        }
+
+        .a_reverse {
+            top: 200px;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes direction {
+            from {
+                left: 40px;
+            }
+
+            to {
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="normal">normal</div>
+    <div class="alternate">alternate</div>
+    <div class="reverse">reverse</div>
+    <div class="a_reverse">alternate-reverse</div>
+</body>
+
+</html>

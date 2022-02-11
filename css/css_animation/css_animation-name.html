@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css animation</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+
+            animation-name: my-animation; /* 애니메이션 이름 */
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+
+        /* 키프레임 이름 = 애니메이션 이름 */
+        @keyframes my-animation {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>div object</div>
+</body>
+
+</html>

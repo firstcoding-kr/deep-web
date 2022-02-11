@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js with simple transition</title>
+</head>
+<style>
+    p {
+        padding-left: 60px;
+    }
+
+    #foo {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        background: blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -moz-transition: all 1s;
+        -webkit-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s;
+    }
+</style>
+
+<body>
+    <p>클릭하면 볼이 따라옵니다.</p>
+    <div id="foo"></div>
+</body>
+<script>
+    var f = document.getElementById('foo');
+    document.addEventListener('click', function (ev) {
+        f.style.left = (ev.clientX - 25) + 'px';
+        f.style.top = (ev.clientY - 25) + 'px';
+    }, false);
+</script>
+
+</html>

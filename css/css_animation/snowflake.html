@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css snow</title>
+    <style>
+        /* 배경 스타일 */
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(#123, #111);
+        }
+
+        /* 눈송이 한알의 기본 스타일 */
+        .snowflake {
+            width: 1vw;
+            height: 1vw;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -5vh;
+        }
+
+        /* 오른쪽 아래로 떨어지는 애니메이션 */
+        @keyframes snowfall1 {
+            0% {
+                top: 0vh;
+            }
+
+            100% {
+                top: 110vh;
+                transform: translate(100px, 0);
+            }
+        }
+
+        /* 왼쪽 아래로 떨어지는 애니메이션 */
+        @keyframes snowfall2 {
+            0% {
+                top: 0vh;
+            }
+
+            100% {
+                top: 110vh;
+                transform: translate(-100px, 0);
+            }
+        }
+
+        .snowflake:nth-child(2n) {
+            animation-name: snowfall1;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .snowflake:nth-child(3n) {
+            animation-name: snowfall2;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        /* 일부 눈들은 블러 효과를 준다. */
+        .snowflake:nth-child(3n+1) {
+            filter: blur(1px);
+        }
+
+        .snowflake:nth-child(5n) {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- snowflake div도 js로 동적으로 생성할 수 있다. -->
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+</body>
+<script>
+    var divs = document.getElementsByClassName('snowflake');
+
+    // 50개의 snowflake들의 left값을 랜덤하게 세팅한다.
+    for (var i = 0; i < divs.length; i++) {
+        var random = Math.floor(Math.random() * 100); // 0~100 랜덤 추출
+        var random2 = Math.floor(Math.random() * 10); // 0~10랜덤 추출
+
+        divs[i].style.left = `${random}vw`;
+        divs[i].style.animationDuration = `${5 + (random2 / 10)}s`;
+        divs[i].style.animationDelay = `-${random}s`;
+    }
+</script>
+
+</html>

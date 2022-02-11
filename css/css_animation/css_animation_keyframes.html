@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css animation</title>
+    <style>
+        @keyframes ball {
+            0% {
+                top: 0px;
+            }
+
+            95% {
+                width: 100px;
+            }
+
+            to {
+                top: 300px;
+                width: 115px;
+                height: 90px
+            }
+        }
+
+        div {
+            position: relative;
+            left: 100px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #000;
+            animation: ball 1s ease-in infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

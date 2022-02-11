@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex 레아이웃</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            /* align-content: flex-start; */
+
+            height: 200px;
+            padding: 10px;
+            background-color: aquamarine;
+        }
+        .item {
+            margin: 5px;
+            background-color: yellowgreen;
+        }
+        .item:first-child {
+            /* background-color:blue; */
+            /* height: 50px; */
+        }
+        .item:nth-child(1) {
+            background-color: cornflowerblue;
+            align-self: flex-end;
+            flex-grow: 1;
+            
+        }
+        .item:nth-child(2) {
+            background-color: bisque;
+            align-self: center;
+           
+            flex-shrink: 0;
+            flex-basis: 100px;
+
+            flex: 1; /* 1 1 0 */
+        }
+        .item:nth-child(3) {
+            background-color: crimson;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>안녕하세요 퍼스트코딩입니다 코딩은 참 재미있어요</div>
+    <div class="container">
+        <div class="item">item a</div>
+        <div class="item">item b</div>
+        <div class="item">item c</div>
+    </div>
+    
+</body>
+</html>

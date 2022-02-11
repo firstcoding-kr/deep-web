@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css animation</title>
+    <style>
+        div {
+            position: absolute;
+            left: 100px;
+            width: 100px;
+            height: 50px;
+            margin-left: -50px;
+            background-color: #000;
+            color: #fff;
+            animation-name: iteration-count;
+            animation-timing-function: linear;
+            animation-duration: 2s;
+        }
+
+        .num {
+            top: 20px;
+            animation-iteration-count: 2
+        }
+
+        .num2 {
+            top: 80px;
+            animation-iteration-count: 1.3
+        }
+
+        .infinite {
+            top: 140px;
+            animation-iteration-count: infinite
+        }
+
+        @keyframes iteration-count {
+            from {
+                left: 100px;
+            }
+
+            to {
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="num">2</div>
+    <div class="num2">1.3</div>
+    <div class="infinite">infinite</div>
+</body>
+
+</html>

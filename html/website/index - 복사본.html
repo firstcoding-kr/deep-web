@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Company 홈페이지 예제</title>
+
+    <!-- 반응형 웹 만들기 -->
+    <!-- 1. 모바일용 css -->
+    <link rel="stylesheet" href="./company_mobile.css" media="(max-width:600px)">
+
+    <!-- 2. 데스크탑용 외부 스타일시트 적용 -->
+    <link rel="stylesheet" href="./company.css" media="(min-width:600px)">
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <div id="logo">
+                <img src="./logo.png" width="200" alt="Logo">
+            </div>
+
+            <div id="topMenu">
+                <a href="#">HOME</a> |
+                <a href="#">NOTICE</a> |
+                <a href="#">LOGIN</a> |
+                <a href="#">JOIN</a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">COMPANY</a></li>
+                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="#">CUSTOMER</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">RECRUIT</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <article id="content">
+            <section>
+                <div id="mainImg">
+                    <img src="./main.jpg" class="cover" width="100%" height="400" alt="main img">
+                    <div id="mainText">코딩의 시작, 퍼스트코딩</div>
+                </div>
+            </section>
+            <section>
+                <ul id="banner">
+                    <li><a href="#"><img src="./banner1.jpg" alt="banner1"></a></li>
+                    <li><a href="#"><img src="./banner2.jpg" alt="banner2"></a></li>
+                    <li><a href="#"><img src="./banner3.jpg" alt="banner3"></a></li>
+                </ul>
+            </section>
+
+        </article>
+
+        <footer>
+            <div id="footer">
+                <div class="footer-container">
+                    <img src="./logo.png" width="200" alt="Logo">
+                </div>
+                <div id="footerAddress" class="footer-container">
+                    <h1>퍼스트코딩학원</h1>
+                    <p>경남 진주시 초전북로 57, 3층<p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
