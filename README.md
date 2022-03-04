@@ -23,3 +23,10 @@ DeepWeb 실습 자료
  - [Animation](https://github.com/firstcoding-kr/deep-web/tree/master/css/css_animation)
  - [Animation (snowflake)](https://firstcoding-kr.github.io/deep-web/css/css_animation/snowflake.html)
  - [Animation (loading)](https://firstcoding-kr.github.io/deep-web/css/css_animation/loading.html)
+
+## JavaScript
+ - [심플 계산기](https://firstcoding-kr.github.io/deep-web/js/simple_calc.html)
+ - [css 제어 1](https://firstcoding-kr.github.io/deep-web/js/control_css.html)
+ - [css 제어 2 (키보드 이벤트)](https://firstcoding-kr.github.io/deep-web/js/control_css_position.html)
+ - [요소 속성(attribute) 변경](https://firstcoding-kr.github.io/deep-web/js/onoff/onoff.html)
+ - [심플 뮤직 플레이어 v1](https://firstcoding-kr.github.io/deep-web/js/music_player_v1/music_player_v1.html)
