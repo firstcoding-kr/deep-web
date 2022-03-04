@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>js 실습</title>
+    <style>
+        .danger {
+            color: red;
+            font-weight: bold;
+            font-size: 20pt;
+        }
+
+        .normal {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>심플 계산기 만들기 실습</h1>
+
+    <fieldset>
+        <legend>사칙연산 계산기</legend>
+        초를 입력해주세요:
+        <input type="number" id="number1" value="1">
+        <input type="number" id="number2" value="2">
+        <button onclick="plus();">더하기</button>
+        <button onclick="minus();">빼기</button>
+        <button onclick="multi()">곱하기</button>
+        <button onclick="div()">나누기</button>
+        <button onclick="rem()">나머지</button>
+        <p>결과: <span id="result">0</span></p>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>초시간 계산기</legend>
+        초를 입력해주세요:
+        <input type="number" id="sec" value="3715">
+        <button onclick="calcTime();">계산!</button>
+        <p id="resultTime"></p>
+    </fieldset>
+    
+    <br>
+
+    <fieldset>
+        <legend>BMI 계산기</legend>
+        체중(kg): <input type="number" id="weight">
+        키(cm): <input type="number" id="height">
+        <button onclick="calcBMI();">계산!</button>
+        <p>결과: <span id="bmiResult"></span> (<span id="bmiResultText"></span>) </p>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>성적 계산기</legend>
+        국어 점수를 입력하세요: <input id="kor" type="number"> <br>
+        영어 점수를 입력하세요: <input id="eng" type="number"> <br>
+        수학 점수를 입력하세요: <input id="math" type="number"> <br>
+        <button onclick="calcGrade();">계산하기</button> <br>
+        <p>평균점수: <span id="avr"></span> </p>
+        <p>등급: <span id="grade"></span> </p>
+
+    </fieldset>
+
+
+    <script>
+        function calcGrade() {
+            var kor = Number(document.getElementById('kor').value);
+            var eng = Number(document.getElementById('eng').value);
+            var math = Number(document.getElementById('math').value);
+
+            var average = (kor + eng + math) / 3;
+            var grade = '';
+
+            if (average >= 90) {
+                grade = 'A';
+            } else if (average >= 80) {
+                grade = 'B';
+            } else if (average >= 70) {
+                grade = 'C';
+            } else if (average >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+
+            document.getElementById('avr').innerHTML = average.toFixed(2);
+            document.getElementById('grade').innerHTML = grade;
+        }
+
+        function calcBMI() {
+            var weight = Number(document.getElementById('weight').value);
+            var height = Number(document.getElementById('height').value);
+
+            height = height / 100;
+
+            var bmi =  weight / (height * height);
+
+            document.getElementById('bmiResult').innerHTML = bmi.toFixed(2);
+
+            var resultText = '계산안됨';
+
+            document.getElementById('bmiResultText').classList.value = '';
+
+            if (bmi < 18.5) {
+                resultText = '저체중';
+            }
+            
+            if (bmi >= 18.5 &&  bmi < 23) {
+                resultText = '정상';
+                document.getElementById('bmiResultText').classList.add('normal');
+            }
+
+            if (bmi >= 23 && bmi < 25) {
+                resultText = '과체중';
+            }
+
+            if (bmi >= 25 && bmi < 30) {
+                resultText = '경도비만';
+                document.getElementById('bmiResultText').classList.add('danger');
+            }
+
+            if (bmi >= 30 && bmi < 35) {
+                resultText = '중정도비만';
+            }
+
+            if (bmi >= 35) {
+                resultText = '고도비만';
+            }
+
+            document.getElementById('bmiResultText').innerHTML = resultText;
+        }
+
+        function calcTime() {
+            var inputSecond = Number(document.getElementById('sec').value);
+  
+            var hour = parseInt(inputSecond / 3600);
+            var min = parseInt((inputSecond % 3600) / 60);
+            var sec = (inputSecond % 3600) % 60;
+
+            // xxx초는 x시간 x분 x초입니다.
+            var result =  inputSecond + '초는 ' + hour + '시간 ' + min + '분 ' + sec + '초입니다.';
+            document.getElementById('resultTime').innerHTML = result;
+
+        }
+
+        function plus() {
+            var x = document.getElementById('number1').value;
+            var y = document.getElementById('number2').value;
+
+            document.getElementById('result')
+            .innerHTML = Number(x) + Number(y);
+        }
+
+        function minus() {
+            var x = document.getElementById('number1').value;
+            var y = document.getElementById('number2').value;
+
+            document.getElementById('result')
+            .innerHTML = Number(x) - Number(y);
+        }
+
+        function multi() {
+            var x = document.getElementById('number1').value;
+            var y = document.getElementById('number2').value;
+
+            document.getElementById('result')
+            .innerHTML = Number(x) * Number(y);
+        }
+
+        function div() {
+            var x = document.getElementById('number1').value;
+            var y = document.getElementById('number2').value;
+
+            document.getElementById('result')
+            .innerHTML = Number(x) / Number(y);
+        }
+
+        function rem() {
+            var x = document.getElementById('number1').value;
+            var y = document.getElementById('number2').value;
+
+            document.getElementById('result')
+            .innerHTML = Number(x) % Number(y);
+        }
+    </script>
+</body>
+</html>
