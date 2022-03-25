@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavsScript 시계</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background-color:dimgray;
+            height: 100%;
+        }
+        .middle {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .time {
+            font-size: 80pt;
+            color: white;
+        }
+        .date {
+            font-size: 40pt;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+    </div>
+    
+    <script>
+        var timeDiv = document.getElementById('time');
+        var dateDiv = document.getElementById('date');
+
+        // 현재 시각을 div에 출력한다. (퀴즈1: 오전,오후가 구분되게 프로그래밍해보시오.)
+        function setClock() {
+            var date = new Date(); // 현재 시각의 Date객체가 생성된다.
+            var hour = date.getHours(); //시
+            var min = date.getMinutes(); //분
+            var sec = date.getSeconds(); //초
+
+            var year = date.getFullYear(); //년
+            var month = date.getMonth(); //월
+            var day = date.getDate(); // 일
+            
+            timeDiv.innerHTML = `${zeroPad(hour)}:${zeroPad(min)}:${zeroPad(sec)}`;
+            dateDiv.innerHTML = `${year}년 ${month}월 ${day}일`;
+        }
+
+        // 한 자리 숫자이면 앞에 '0'을 붙여주는 함수
+        function zeroPad(num) {
+            if (parseInt(num) < 10) {
+                return '0' + num;
+            } else {
+                return num;
+            }
+        }
+
+        setClock();
+        setInterval(setClock, 1000); //1초마다 setClock 함수 실행
+
+        /*
+            퀴즈2: setInterval, clearInterval을 활용하여 스탑워치를 만들어보자.
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>달력</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+        .calendar {
+            width: 600px;
+            margin: 0 auto;
+            font-family: "NotoSansR";
+        }
+
+        .cal-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 44px;
+        }
+
+        .cal-nav .nav-btn:hover {
+            color: red;
+            cursor: pointer;
+        }
+
+        .cal-nav .year-month {
+            width: 300px;
+            text-align: center;
+        }
+
+        .cal-container {
+            padding-top: 50px;
+            margin: 0 auto;
+        }
+
+        .cal-container .days {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .cal-container .day {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% / 7);
+            color: #666666;
+            font-size: 16px;
+            border-radius: 5px
+        }
+
+        .cal-container .dates {
+            display: flex;
+            flex-wrap: wrap;
+            height: 360px;
+        }
+
+        .cal-container .day:nth-child(7n) {
+            color: blue;
+        }
+
+        .cal-container .day:nth-child(7n-6) {
+            color: red;
+        }
+
+        .cal-container .day.disable {
+            color: #dddddd;
+        }
+
+        .today {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar">
+        <div class="cal-nav">
+            <div onclick="goPrev();" class="nav-btn">&lt;</div>
+            <div class="year-month" id="yearMonth"></div>
+            <div onclick="goNext();" class="nav-btn">&gt;</div>
+        </div>
+        <div class="cal-container">
+            <div class="days">
+                <div class="day">SUN</div>
+                <div class="day">MON</div>
+                <div class="day">TUE</div>
+                <div class="day">WED</div>
+                <div class="day">THU</div>
+                <div class="day">FRI</div>
+                <div class="day">SAT</div>
+            </div>
+            <div class="dates" id="dates"></div>
+        </div>
+    </div>
+    <script>
+        var thisMonth = new Date(); // 달력에서 표기하는 날짜 객체
+        var today = new Date(); // 오늘 날짜를 저장하고 있는 객체
+
+        drawCalender(thisMonth);
+
+
+        // 특정 월의 date객체를 매개변수(thisMonth)로 넘겨주면 화면에 달력을 그려주는 함수
+        function drawCalender(thisMonth) {
+            console.log(thisMonth);
+
+            var year = thisMonth.getFullYear();
+            var month = thisMonth.getMonth();
+
+            // 이전 달의 마지막 날 날짜와 요일 구하기
+            var prevLast = new Date(year, month, 0);
+            var prevLastDate = prevLast.getDate(); // 날짜
+            var prevLastDay = prevLast.getDay(); // 요일
+
+            // 이번 달의 마지막날 날짜와 요일 구하기
+            var last = new Date(year, month + 1, 0);
+            var lastDate = last.getDate(); // 날짜
+            var lastDay = last.getDay(); // 요일
+
+            // 현재 월 표기
+            document.getElementById('yearMonth').innerText = year + '.' + (month + 1);
+
+            // 렌더링 html 요소
+            calendar = document.getElementById('dates');
+            calendar.innerHTML = '';
+
+            // 지난달 (지난달의 시작 날짜 = 마지막날-현재요일수)
+            for (var i = prevLastDate - prevLastDay; i <= prevLastDate; i++) {
+                calendar.innerHTML += '<div class="day prev disable">' + i + '</div>'
+            }
+            // 이번달
+            for (var i = 1; i <= lastDate; i++) {
+                // 오늘 날짜와 같은 부분은 today클래스를 붙여준다.
+                if (today.getMonth() == month && today.getDate() == i) {
+                    calendar.innerHTML += '<div class="day current today">' + i + '</div>'
+                } else {
+                    calendar.innerHTML += '<div class="day current">' + i + '</div>'
+                }
+            }
+            // 다음달
+            for (var i = 1; i < 7 - lastDay; i++) {
+                calendar.innerHTML += '<div class="day next disable">' + i + '</div>'
+            }
+        }
+
+        // 이전 달로 이동
+        function goPrev() {
+            thisMonth = new Date(thisMonth.getFullYear(), thisMonth.getMonth() - 1, 1);
+            drawCalender(thisMonth);
+        }
+
+        // 다음 달로 이동
+        function goNext() {
+            thisMonth = new Date(thisMonth.getFullYear(), thisMonth.getMonth() + 1, 1);
+            drawCalender(thisMonth);
+        }
+    </script>
+</body>
+
+</html>
