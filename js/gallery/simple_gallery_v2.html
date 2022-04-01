@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 갤러리</title>
+    <style>
+        #images > img {
+            height: 200px;
+            margin: 5px;
+        }
+
+        #backPanel {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #00000090;
+            animation: fade;
+            animation-duration: 1s;
+        }
+
+        #backPanel > img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        #btnClose {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .nav {
+            color: whitesmoke;
+            font-size: 40px;
+            font-family: 'NSimSun';
+            font-weight: bold;
+            
+        }
+
+        .nav:hover {
+            color: #aaaaaa;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="images">
+    </div>
+    <div id="backPanel">
+        <button id="btnClose" onclick="onCloseClick();">x</button>
+        <div class="nav" onclick="prev();" title="prev">&lt;</div>
+        <img id="centerImg" src="https://cdn.pixabay.com/photo/2022/03/06/05/30/clouds-7050884__480.jpg">
+        <div class="nav" onclick="next();" title="next">&gt;</div>
+    </div>
+    <script>
+        var currentImgNode;
+
+        var images = [
+            "https://cdn.pixabay.com/photo/2022/03/06/05/30/clouds-7050884__480.jpg",
+            "https://cdn.pixabay.com/photo/2020/09/26/07/05/sea-5603351__340.jpg",
+            "https://cdn.pixabay.com/photo/2022/03/04/15/14/river-7047522__340.jpg",
+            "https://cdn.pixabay.com/photo/2022/03/01/20/58/peace-genius-7042013__340.jpg",
+            "https://cdn.pixabay.com/photo/2016/11/19/16/56/adventure-1840310__340.jpg",
+            "https://cdn.pixabay.com/photo/2015/07/28/22/12/autumn-865157__340.jpg",
+            "https://cdn.pixabay.com/photo/2021/12/27/14/39/tulips-6897351__340.jpg",
+            "https://cdn.pixabay.com/photo/2020/02/14/09/50/sea-4847987__340.jpg"
+        ];
+
+        var imagesDiv = document.getElementById('images');
+
+        for (var i = 0 ; i< images.length; i++ ) {
+            var img = document.createElement('img'); // img 노드 생성
+            img.src = images[i]; // img 노드의 src속성에 images배열의 URL대입
+            img.onclick = onImgClick; // onclick이벤트 발생시 onImgClick 실행
+
+            imagesDiv.appendChild(img); // 생성된 노드 div에 추가
+        }
+
+        // 이미지를 클릭했을 때 실행되는 함수
+        function onImgClick() {
+            // currentImgNode 변수에 현재 클릭한 이미지 노드를 저장해둔다. (next, prev에서 사용하기 위함)
+            currentImgNode = this;
+
+            // 이미 존재하는 img태그(#centerImg)의 src속성을 변경하는 방법으로 수정함
+            var centerImg = document.getElementById('centerImg');
+            centerImg.src = this.src;
+          
+            document.body.style.overflow = 'hidden';
+            
+            var backPanel = document.getElementById('backPanel');
+            // backPanel div의 display를 flex로 바꾼다.
+            backPanel.style.display = 'flex';
+            
+            // 브라우저를 전체화면으로 바꾼다.
+            // document.documentElement.requestFullscreen();
+        }
+
+        // 이전 이미지 클릭 - todo: 예외 처리가필요하다
+        function prev() {
+            console.log(currentImgNode.previousElementSibling);
+            currentImgNode.previousElementSibling.click()
+        }
+
+        // 다음 이미지 클릭 - todo: 예외 처리가필요하다
+        function next() {
+            console.log(currentImgNode.nextElementSibling);
+            currentImgNode.nextElementSibling.click();
+        }
+
+        // 닫기 버튼을 클릭했을 때 실행되는 함수 
+        function onCloseClick() {
+            var backPanel = document.getElementById('backPanel');
+            
+            document.body.style.overflow = '';
+
+            // backPanel div의 display를 none로 바꾼다.
+            backPanel.style.display = 'none';
+            
+            // 전체화면 종료
+            // document.exitFullscreen();
+        }
+    </script>
+</body>
+</html>

@@ -20,7 +20,7 @@
 
     <fieldset>
         <legend>사칙연산 계산기</legend>
-        초를 입력해주세요:
+        숫자를 입력해주세요:
         <input type="number" id="number1" value="1">
         <input type="number" id="number2" value="2">
         <button onclick="plus();">더하기</button>
@@ -139,7 +139,7 @@
   
             var hour = parseInt(inputSecond / 3600);
             var min = parseInt((inputSecond % 3600) / 60);
-            var sec = (inputSecond % 3600) % 60;
+            var sec = inputSecond % 60;
 
             // xxx초는 x시간 x분 x초입니다.
             var result =  inputSecond + '초는 ' + hour + '시간 ' + min + '분 ' + sec + '초입니다.';
@@ -151,40 +151,35 @@
             var x = document.getElementById('number1').value;
             var y = document.getElementById('number2').value;
 
-            document.getElementById('result')
-            .innerHTML = Number(x) + Number(y);
+            document.getElementById('result').innerHTML = Number(x) + Number(y);
         }
 
         function minus() {
             var x = document.getElementById('number1').value;
             var y = document.getElementById('number2').value;
 
-            document.getElementById('result')
-            .innerHTML = Number(x) - Number(y);
+            document.getElementById('result').innerHTML = Number(x) - Number(y);
         }
 
         function multi() {
             var x = document.getElementById('number1').value;
             var y = document.getElementById('number2').value;
 
-            document.getElementById('result')
-            .innerHTML = Number(x) * Number(y);
+            document.getElementById('result').innerHTML = Number(x) * Number(y);
         }
 
         function div() {
             var x = document.getElementById('number1').value;
             var y = document.getElementById('number2').value;
 
-            document.getElementById('result')
-            .innerHTML = Number(x) / Number(y);
+            document.getElementById('result').innerHTML = Number(x) / Number(y);
         }
 
         function rem() {
             var x = document.getElementById('number1').value;
             var y = document.getElementById('number2').value;
 
-            document.getElementById('result')
-            .innerHTML = Number(x) % Number(y);
+            document.getElementById('result').innerHTML = Number(x) % Number(y);
         }
     </script>
 </body>
