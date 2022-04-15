@@ -34,3 +34,5 @@ DeepWeb 실습 자료
  - [시계 (Date객체 다루기1)](https://firstcoding-kr.github.io/deep-web/js/clock.html)
  - [달력 (Date객체 다루기2)](https://firstcoding-kr.github.io/deep-web/js/calendar.html)
  
+ ## 실습
+ - [유튜브앱 클론코딩](https://firstcoding-kr.github.io/deep-web/project_front/clone_youtube_app/video.html)
