@@ -36,6 +36,9 @@ DeepWeb 실습 자료
 
 ## PHP
  - [이곳의 소스코드를 참고하세요.](https://github.com/firstcoding-kr/deep-web/tree/master/php)
+ - 
+## DB
+ - [연습문제 다운로드](https://firstcoding-kr.github.io/deep-web/db/mysql%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C.zip)
  
  ## 실습
  - [유튜브앱 클론코딩](https://firstcoding-kr.github.io/deep-web/project_front/clone_youtube_app/video.html)
