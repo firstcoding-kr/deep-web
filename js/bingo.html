@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: solid;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        .checked {
+            background-color: coral;
+            color: white;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+   
+    <script>
+        // list에 1~25까지 수를 저장한다.
+        var list = [];
+        for (var i = 1; i<=25; i++) {
+            list.push(i);
+        }
+
+        // 배열을 섞는다.
+        for (var i=0; i<100; i++) {
+            // shuffle 구현
+            var randomA = parseInt(Math.random() * 25);
+            var randomB = parseInt(Math.random() * 25);
+
+            // swap
+            var temp = list[randomA];
+            list[randomA] = list[randomB];
+            list[randomB] = temp;
+        }
+    
+
+        var n = 0;
+
+        // 빙고판을 만든다.
+        document.write('<table>');       
+        for (var i = 1; i <= 5; i = i + 1) {
+            document.write('<tr>');
+            for (var j = 1; j <= 5; j++) {
+                document.write(`<td id="id-${j}-${i}" data-x="${j}" data-y="${i}" onclick="onChecked(this);">${list[n++]}</td>`);               
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+
+        function onChecked(td) {
+            td.classList.toggle('checked');
+            // 클릭한 녀석의 x,y를 구한다.
+            //console.log('x=' + td.dataset['x']);
+            //console.log('y=' + td.dataset['y']);
+
+            // x축 td들의 클릭 여부를 알아온다.
+            // for(i=1~5) i,y가 checked되어있는가를 확인
+            var checkedCount = 0;
+            for (var i = 1; i <= 5; i++) {
+                var cell = document.getElementById(`id-${i}-${td.dataset['y']}`);
+                
+                if (cell.classList.contains('checked')) {
+                    checkedCount++;
+                }
+            }
+
+            if (checkedCount == 5) {
+                console.log('x축 빙고!!!');
+            }
+
+            // y축 td들의 클릭 여부를 알아온다.
+            // for(i=1~5) x,i가 checked되어있는가를 확인
+            checkedCount = 0;
+            for (var i = 1; i <= 5; i++) {
+                var cell = document.getElementById(`id-${td.dataset['x']}-${i}`);
+                
+                if (cell.classList.contains('checked')) {
+                    checkedCount++;
+                }
+            }
+
+            if (checkedCount == 5) {
+                console.log('y축 빙고!!!');
+            }
+
+            // 대각선
+            checkedCount = 0;
+            var checkedCount2 = 0;
+            
+            for (var i=1; i<=5; i++) {
+                var cell = document.getElementById(`id-${i}-${i}`);
+                
+                if (cell.classList.contains('checked')) {
+                    checkedCount++;
+                }
+
+                // 1 2 3 4 5
+                // 5 4 3 2 1
+                // 6 6 6 6 6
+                cell = cell = document.getElementById(`id-${6-i}-${i}`);
+                if (cell.classList.contains('checked')) {
+                    checkedCount2++;
+                }
+            }
+
+            if (checkedCount == 5) {
+                console.log('대각선1 빙고!');
+            }
+            if (checkedCount2 == 5) {
+                console.log('대각선2 빙고!');
+            }
+        }
+    </script>
+</body>
+</html>

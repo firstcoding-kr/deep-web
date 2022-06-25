@@ -1,0 +1,4 @@
+document.oncontextmenu = () => true;
+document.ondragstart = () => true;
+document.onselectstart = () => true;
+document.body.MozUserSelect = '';

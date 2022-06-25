@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 값 출력 추가 삭제</title>
+</head>
+<body>
+   
+    <fieldset>
+        <legend>배열 값 추가</legend>
+        추가할 값: <input type="text" placeholder="배열에 추가할 값을 입력하세요." id="input">
+        <button onclick="add();">추가</button>
+        <button onclick="clearArr();">전체삭제</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>배열 내용</legend>
+        <div id="result">
+            
+        </div>
+    </fieldset>
+
+    <script>
+        var arr = [];
+
+        function clearArr() {
+            arr = [];
+            print();
+        }
+
+        function add() {
+            var input = document.getElementById('input');
+
+            if (input.value == '') {
+                alert('제대로 입력해주세요.');
+                return;
+            }
+
+            arr[arr.length] = input.value;
+
+            print();
+        }
+
+        function print() {
+            var resultDiv = document.getElementById('result');
+
+            var tags = "";
+
+            for(var i = 0; i < arr.length; i++) {
+                tags = tags + '<div>'+ arr[i] +'</div>';
+            }
+
+            resultDiv.innerHTML = tags;
+        }
+
+        
+    </script>
+</body>
+</html>

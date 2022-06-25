@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>글자수 카운트</title>
+    </head>
+    <body>
+        <textarea id="text"></textarea>
+        <p id="result"></p>
+
+        <script>
+            var textarea = document.getElementById('text');
+            var result = document.getElementById('result');
+            textarea.addEventListener('keyup', countText);
+
+            function countText() {                
+                // 글자수를 구해와서
+                // = 1.글자를 가져와서 2.가져온 글자의 길이를 구한다.
+                var count = textarea.value.length;
+                
+                // p#count에 반영해준다.
+                result.innerText = count;
+            }
+        </script>
+    </body>
+</html>
