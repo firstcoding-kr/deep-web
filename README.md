@@ -31,6 +31,7 @@ DeepWeb 실습 자료
  - [요소 속성(attribute) 변경](https://firstcoding-kr.github.io/deep-web/js/onoff/onoff.html)
  - [심플 뮤직 플레이어 v1](https://firstcoding-kr.github.io/deep-web/js/music_player_v1/music_player_v1.html)
  - [이미지 갤러리](https://firstcoding-kr.github.io/deep-web/js/gallery/simple_gallery.html)
+ - [이미지 갤러리 (업그레이드)](https://firstcoding-kr.github.io/deep-web/js/gallery/simple_gallery_v4.html)
  - [시계 (Date객체 다루기1)](https://firstcoding-kr.github.io/deep-web/js/clock.html)
  - [달력 (Date객체 다루기2)](https://firstcoding-kr.github.io/deep-web/js/calendar.html)
 
