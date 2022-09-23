@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <title>Control CSS</title>
     <style>
-        #box { 
-        border: 5px solid black;
-        width: 100px; 
-        height: 100px;
-        background-color: gold;
+        #box {
+            border: 5px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: gold;
         }
-        fieldset { width: 300px; }
-        fieldset > div { margin: 5px; }
-        input[type=range] { width: 100px; }
+
+        fieldset {
+            width: 300px;
+        }
+
+        fieldset>div {
+            margin: 5px;
+        }
+
+        input[type=range] {
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -38,24 +47,24 @@
 
         var box = document.getElementById('box');
 
-        color1.onchange = function() {
-        box.style.backgroundColor = color1.value;
+        color1.onchange = function () {
+            box.style.backgroundColor = color1.value;
         };
 
-        color2.oninput = function() {
-        box.style.borderColor = color2.value;
+        color2.oninput = function () {
+            box.style.borderColor = color2.value;
         };
 
-        rg1.onchange = function() {
-        box.style.width = rg1.value + 'px';
+        rg1.onchange = function () {
+            box.style.width = rg1.value + 'px';
         };
 
-        rg2.oninput = function() {
-        box.style.height = rg2.value + 'px';
+        rg2.oninput = function () {
+            box.style.height = rg2.value + 'px';
         };
 
-        rg3.oninput = function() {
-        box.style.borderRadius = rg3.value + '%';
+        rg3.oninput = function () {
+            box.style.borderRadius = rg3.value + '%';
         };
     </script>
 </body>
