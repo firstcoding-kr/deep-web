@@ -34,6 +34,7 @@ DeepWeb 실습 자료
  - [이미지 갤러리 (업그레이드)](https://firstcoding-kr.github.io/deep-web/js/gallery/simple_gallery_v4.html)
  - [시계 (Date객체 다루기1)](https://firstcoding-kr.github.io/deep-web/js/clock.html)
  - [달력 (Date객체 다루기2)](https://firstcoding-kr.github.io/deep-web/js/calendar.html)
+ - [댓글 예제](https://firstcoding-kr.github.io/deep-web/js/js_comment.html)
 
 ## PHP
  - [이곳의 소스코드를 참고하세요.](https://github.com/firstcoding-kr/deep-web/tree/master/php)
